@@ -1,0 +1,16 @@
+pipeline {
+	agent {label "linux"}
+
+	options {
+		buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeeStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+		disableConcurrentBuilds()
+	}
+	stages {
+		stage('Hello') {
+			steps {
+				echo "Hello Miao"
+			}
+		}
+	}
+
+}
