@@ -9,12 +9,13 @@ pipeline {
 		stage('Hello') {
 			steps {
 				echo "Hello Miao"
+				echo "For Pull request only"
 			}
 		}
 
 		stage ('cat README') {
 		    when {
-			branch "feature*"
+			    branch "feature*"
 		    }
 		    steps {
 			sh '''
